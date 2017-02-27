@@ -3,5 +3,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require_tree ./vendor
+//= require slick.js
 //= require_tree ./app
 
