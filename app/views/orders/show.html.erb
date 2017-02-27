@@ -141,19 +141,7 @@
             $(window).scroll(sticky_relocate);
             sticky_relocate();
         });
-        document.getElementById("edit-email-btn").onclick = function fun() {
-          $('#email-data').text('<%= @order.email %>');
-          $('#email-data').addClass('hidden');
-          $('#email-input-field').removeClass('hidden');
-          $('#edit-email-btn').addClass('hidden');
-        }
-        document.getElementById("edit-phone-btn").onclick = function fun() {
-          $('#phone-data').text('<%= @order.phone %>');
-          $('#phone-data').addClass('hidden');
-          $('#phone-input-field').removeClass('hidden');
-          $('#edit-phone-btn').addClass('hidden');
-        }
-      });
+      }
     <% end %>
   <% end %>
 </script>

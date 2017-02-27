@@ -1,3 +1,4 @@
+<div id="sticky-anchor"></div>
 <div class="padded bar-container">
   <div class="progression-bar">
     <div class="circle-1">
@@ -76,18 +77,34 @@
 
 
 <% content_for :after_js do %>
-<script>
- $("#select-universe").on("submit", function() {
-  var paragraph = $('<p>').text("Selectionnez au moins 3 univers")
-  if ($(".select-tag-container input[type=checkbox]:checked").length >= 3) {
-    return true;
-  } else {
-    $('.error-messages').html(paragraph);
-    return false; // prevent it from being submitted (errors, etc.)
-    $('.error-messages').remove();
-  }
-});
-</script>
+  <script>
+     $("#select-universe").on("submit", function() {
+        var paragraph = $('<p>').text("Selectionnez au moins 3 univers")
+        if ($(".select-tag-container input[type=checkbox]:checked").length >= 3) {
+          return true;
+        } else {
+          $('.error-messages').html(paragraph);
+          return false; // prevent it from being submitted (errors, etc.)
+          $('.error-messages').remove();
+        }
+      });
+
+      $(document).ready(function() {
+          function sticky_relocate() {
+            var window_top = $(window).scrollTop();
+            var div_top = $('#sticky-anchor').offset().top;
+            if (window_top > div_top)
+                $('.bar-container').addClass('sticky');
+            else
+                $('.bar-container').removeClass('sticky');
+          }
+          $(function(){
+              $(window).scroll(sticky_relocate);
+              sticky_relocate();
+          });
+        });
+
+  </script>
 <% end %>
 
 
