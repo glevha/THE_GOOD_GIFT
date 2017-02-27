@@ -20,6 +20,8 @@ gem 'carrierwave'#, github: 'carrierwaveuploader/carrierwave'
 # Payment
 gem 'stripe'
 
+# slick
+gem 'slick_rails'
 
 gem 'sass-rails'
 gem 'jquery-rails'
