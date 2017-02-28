@@ -2,19 +2,25 @@
 <div class="padded bar-container">
   <div class="progression-bar">
     <div class="circle-1">
-      <i class="fa fa-circle" aria-hidden="true"></i>
-    </div>
-    <div class="circle-2">
       <span class="fa-stack fa-4x">
         <i id="white-circle" class="fa fa-circle fa-stack-2x icon-background4"></i>
         <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
       </span>
     </div>
-    <div class="circle-3">
+    <div class="circle-2">
       <i class="fa fa-circle" aria-hidden="true"></i>
     </div>
+    <div class="circle-3">
+      <span class="fa-stack fa-4x">
+        <i id="white-circle" class="fa fa-circle fa-stack-2x icon-background4"></i>
+        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+      </span>
+    </div>
     <div class="circle-4">
-      <i class="fa fa-circle" aria-hidden="true"></i>
+      <span class="fa-stack fa-4x">
+        <i id="white-circle" class="fa fa-circle fa-stack-2x icon-background4"></i>
+        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+      </span>
     </div>
   </div>
 
@@ -89,20 +95,20 @@
         }
       });
 
-      $(document).ready(function() {
-          function sticky_relocate() {
-            var window_top = $(window).scrollTop();
-            var div_top = $('#sticky-anchor').offset().top;
-            if (window_top > div_top)
-                $('.bar-container').addClass('sticky');
-            else
-                $('.bar-container').removeClass('sticky');
-          }
-          $(function(){
-              $(window).scroll(sticky_relocate);
-              sticky_relocate();
-          });
-        });
+      // $(document).ready(function() {
+      //     function sticky_relocate() {
+      //       var window_top = $(window).scrollTop();
+      //       var div_top = $('#sticky-anchor').offset().top;
+      //       if (window_top > div_top)
+      //           $('.bar-container').addClass('sticky');
+      //       else
+      //           $('.bar-container').removeClass('sticky');
+      //     }
+      //     $(function(){
+      //         $(window).scroll(sticky_relocate);
+      //         sticky_relocate();
+      //     });
+      //   });
 
   </script>
 <% end %>

@@ -51,30 +51,25 @@
 
         </div>
 
-
         <div class="place-order">
           <div class="text-center" style="margin-bottom: 20px;">
-          <button class="btn btn-primary btn-rounded">
+          <%= form_tag order_payments_path(@order) do %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="My Order"
+              data-email="<%= @order.email %>"
+              data-total_price="<%= @order.total_price_cents %>"
+              data-currency="<%= @order.total_price.currency %>">
+            </script>
+          <% end %>
+          <!-- <button class="btn btn-primary btn-rounded">
               Commander
-            </button>
+            </button> -->
           </div>
           <span class="tandc">En passant votre commande, vous acceptez nos conditions générales d'utilisation ainsi que notre politique de confidentialité. Vous consentez à ce que certaines de vos données soient enregistrées par The Good Gift©.
           </span>
         </div>
       </div>
-
-
-          <%= form_tag order_payments_path(@order) do %>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="My Order"
-          data-email="<%= @order.email %>"
-          data-total_price="<%= @order.total_price_cents %>"
-          data-currency="<%= @order.total_price.currency %>">
-        </script>
-        <% end %>
-
-
 
     <div class="col-xs-1 col-sm-4" id="forms">
         <div id="sticky-anchor"></div>
