@@ -8,8 +8,12 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create(status: "pending",
-      total_price: params[:total_price],
+    @cart = Cart.find(params[:id])
+    @order = Order.create(
+      status: "pending",
+      total_price: @cart.price,
+      cost: @cart.products.price_cents,
+      total_price_cents:
       )
 
     # if params[:big] != nil
